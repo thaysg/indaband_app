@@ -1,0 +1,71 @@
+[
+  {
+    "title": "Making A Fire ",
+    "image": "assets/images/Rectangle 46.png",
+    "band": "Foo Fighters",
+    "album": "album1",
+    "info": [
+      {
+        "title": "assets/images/Rectangle 46.png"        
+      }
+      
+    ]
+  },
+  {
+    "title": "  WOW  ",
+    "image": "assets/images/Rectangle 48.png",
+    "band": "Tiesto",
+    "album": "album2",
+    "info": [
+      {
+        "title": "assets/images/Rectangle 48.png"
+        
+      }
+    ]
+  },
+  {
+    "title": "Ain't Fun ",
+    "image": "assets/images/Rectangle 43.png",
+    "band": "Paramore",
+    "album": "album3",
+    "info": [
+      {
+        "title": "assets/images/Rectangle 43.png"
+      
+      }
+    ]
+  },
+  {
+    "title": "Get Lucky ",
+    "image": "assets/images/Rectangle 44.png",
+    "band": "Daft Punk",
+    "album": "album4",
+    "info": [
+      {
+        "title": "assets/images/Rectangle 44.png"
+      }
+    ]
+  },
+  {
+    "title": "It's Well ",
+    "image": "assets/images/Rectangle 42.png",
+    "band": "MercyMe",
+    "album": "album5",
+    "info": [
+      {
+        "title": "assets/images/Rectangle 42.png"
+      }
+    ]
+  },
+  {
+    "title": "  WOW  ",
+    "image": "assets/images/Rectangle 49.png",
+    "band": "Tiesto",
+    "album": "album6",
+    "info": [
+      {
+        "title": "assets/images/Rectangle 49.png"
+      }
+    ]
+  }
+]
