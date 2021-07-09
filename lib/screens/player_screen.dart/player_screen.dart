@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:indaband_app/components/body.dart';
 import 'package:indaband_app/models/player_model.dart';
@@ -23,7 +25,7 @@ class PlayerScreen extends StatefulWidget {
 }
 
 class _PlayerScreenState extends State<PlayerScreen> {
-  double sliderValue = 0.2;
+  double sliderValue = 2;
   final controller = ChallengeController();
   final pageController = PageController();
 
@@ -39,14 +41,6 @@ class _PlayerScreenState extends State<PlayerScreen> {
     });
   }
 
-  @override
-  void initState() {
-    super.initState();
-    pageController.addListener(() {
-      controller.currentPage = pageController.page!.toInt() + 1;
-    });
-  }
-
   bool backButton = false;
 
   bool playButton = false;
@@ -58,6 +52,31 @@ class _PlayerScreenState extends State<PlayerScreen> {
   double finalSong = 5.10;
 
   double sliderSoundValue = 0.5;
+
+  void startTimer() async {
+    Timer.periodic(
+      Duration(seconds: 0),
+      (Timer timer) => setState(
+        () {
+          if (initialSong == 310) {
+            timer.cancel();
+          } else {
+            initialSong += 0.01;
+            //timer.cancel();
+          }
+        },
+      ),
+    );
+  }
+
+  @override
+  void initState() {
+    super.initState();
+    pageController.addListener(() {
+      controller.currentPage = pageController.page!.toInt() + 1;
+    });
+    //startTimer();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -106,6 +125,29 @@ class _PlayerScreenState extends State<PlayerScreen> {
                     finalValue: finalSong.toStringAsFixed(2),
                   ),
                 ),
+                /* Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      _progress.toStringAsFixed(2),
+                    ),
+                    Text('5.10'),
+                  ],
+                ), */
+                /* LinearProgressIndicator(
+                  backgroundColor: Colors.cyanAccent,
+                  valueColor: new AlwaysStoppedAnimation<Color>(Colors.red),
+                  value: initialSong = 0,
+                ), */
+                /* RaisedButton(
+                  child: Text('Start timer'),
+                  onPressed: () {
+                    setState(() {
+                      initialSong = 0;
+                    });
+                    startTimer();
+                  },
+                ), */
                 Expanded(
                   child: ButtonsMusic(
                     onTapRewind: () {
@@ -122,6 +164,8 @@ class _PlayerScreenState extends State<PlayerScreen> {
                     onTapPlay: () {
                       setState(() {
                         playButton = !playButton;
+                        initialSong = 0;
+                        startTimer();
                       });
                     },
                     iconPlay: playButton

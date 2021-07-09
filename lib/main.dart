@@ -1,14 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import 'components/constants.dart';
 import 'screens/home/home.dart';
 
 void main() {
+  WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
-    [DeviceOrientation.portraitUp],
-  ).then((_) {
-    SystemChrome.setEnabledSystemUIOverlays([]);
-    WidgetsFlutterBinding.ensureInitialized();
-  });
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitDown]);
   runApp(MyApp());
 }
 
@@ -18,7 +16,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'IndaBand',
-      theme: ThemeData.dark().copyWith(),
+      theme: ThemeData.dark().copyWith(
+        scaffoldBackgroundColor: primaryColor,
+      ),
       home: HomeScreen(),
     );
   }

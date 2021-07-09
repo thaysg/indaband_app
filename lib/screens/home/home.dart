@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:indaband_app/components/body.dart';
 import 'package:indaband_app/components/constants.dart';
 import 'package:indaband_app/components/text_widget.dart';
@@ -29,12 +28,6 @@ class _HomeScreenState extends State<HomeScreen> {
 
   @override
   Widget build(BuildContext context) {
-    SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp],
-    ).then((_) {
-      SystemChrome.setEnabledSystemUIOverlays([]);
-      WidgetsFlutterBinding.ensureInitialized();
-    });
     if (controller.state == HomeState.success) {
       return Scaffold(
         appBar: AppBar(

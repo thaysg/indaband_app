@@ -28,7 +28,7 @@ class SearchScreen extends StatelessWidget {
               padding: const EdgeInsets.symmetric(
                 horizontal: 24,
               ),
-              child: ListView(
+              child: Column(
                 children: [
                   TextWidget(
                     title: 'Discover',
