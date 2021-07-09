@@ -125,29 +125,6 @@ class _PlayerScreenState extends State<PlayerScreen> {
                     finalValue: finalSong.toStringAsFixed(2),
                   ),
                 ),
-                /* Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Text(
-                      _progress.toStringAsFixed(2),
-                    ),
-                    Text('5.10'),
-                  ],
-                ), */
-                /* LinearProgressIndicator(
-                  backgroundColor: Colors.cyanAccent,
-                  valueColor: new AlwaysStoppedAnimation<Color>(Colors.red),
-                  value: initialSong = 0,
-                ), */
-                /* RaisedButton(
-                  child: Text('Start timer'),
-                  onPressed: () {
-                    setState(() {
-                      initialSong = 0;
-                    });
-                    startTimer();
-                  },
-                ), */
                 Expanded(
                   child: ButtonsMusic(
                     onTapRewind: () {
